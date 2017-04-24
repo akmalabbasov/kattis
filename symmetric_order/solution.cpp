@@ -5,8 +5,7 @@ using namespace std;
 
 int main() {
   int n;
-  int k = 0;
-  while (true) {
+  for (int k = 1; ; k++) {
     cin >> n;
     if (n == 0)
       break;
@@ -16,14 +15,12 @@ int main() {
       cin >> a[i];
     }
 
-    cout << "SET " << k + 1 << endl;
+    cout << "SET " << k << endl;
     for (int i = 0; i < n; i += 2)
       cout << a[i] << endl;
 
     for (int i = n - 1 - n%2; i > 0; i -= 2)
       cout << a[i] << endl;
-
-    k++;
   }
 
   return 0;
