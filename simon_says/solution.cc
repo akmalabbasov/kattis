@@ -1,8 +1,14 @@
 #include <iostream>
 #include <string>
 
+bool StartsWith(const std::string& prefix, const std::string& str) {
+  if (str.substr(0, prefix.length()) == prefix)
+    return true;
+  return false;
+}
+
 int main() {
-  std::string msg_prefix = "Simon says ";
+  std::string prefix = "Simon says ";
   std::string line;
 
   // Read number of lines  
@@ -13,9 +19,8 @@ int main() {
   for (int i = 0; i < n; ++i) {
     std::getline(std::cin, line);
 
-    int p = line.find(msg_prefix);
-    if (p != std::string::npos) {
-      std::cout << line.substr(p+msg_prefix.length()) << std::endl; 
+    if (StartsWith(prefix, line)) {
+      std::cout << line.substr(prefix.length()) << std::endl; 
     }
   }
 
