@@ -27,8 +27,9 @@ private:
       anomaly = true;
     }
 
-    if (!anomaly)
+    if (!anomaly) {
       registry[user]++;
+    }
 
     LogAction(user, action, anomaly);
   }
@@ -45,10 +46,11 @@ int main() {
     std::string user, action;
     std::cin >> action >> user;
 
-    if (action == "entry")
+    if (action == "entry") {
       registry.UserEntered(user);
-    else if (action == "exit") 
+    } else if (action == "exit") {
       registry.UserExited(user);
+    }
   }
 
   return 0;
