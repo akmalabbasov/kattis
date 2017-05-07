@@ -9,9 +9,11 @@ int main() {
   for (int k = 1; ; ++k) {
     std::string line;
     std::getline(std::cin, line);
+    
     num_test_cases = std::stoi(line);
-    if (!num_test_cases)
+    if (!num_test_cases) {
       break;
+    }
 
     std::map<std::string, int> animals_registry;
     for (int i = 0; i < num_test_cases; ++i) {
@@ -19,10 +21,11 @@ int main() {
  
       // The animal name is the last or the only word in the line
       int animal_name_pos = line.find_last_of(' ');
-      if (animal_name_pos == std::string::npos)
+      if (animal_name_pos == std::string::npos) {
         animal_name_pos = 0;
-      else
+      } else {
         animal_name_pos += 1;
+      }
 
       // The last word in the line is the animal name
       std::string animal_name = line.substr(animal_name_pos);
